@@ -1,0 +1,16 @@
+[project]
+name = "sampling-optimizers"
+version = "0.1.0"
+description = "Sampling-based black-box optimizers with a NumPy core"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26"]
+
+[project.optional-dependencies]
+evosax = ["evosax>=0.2,<0.3", "jax>=0.5,<0.12"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["sampling_optimizers"]

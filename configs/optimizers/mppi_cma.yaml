@@ -1,0 +1,7 @@
+algorithm: mppi_cma
+num_candidates: 512
+num_iterations: 2
+initial_noise_level: 0.4
+temperature: 0.1
+minimum_noise_level: 0.05
+covariance_adaptation_rate: 0.1

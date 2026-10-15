@@ -1,0 +1,11 @@
+# Template for separately prepared user data; edit the reference below.
+ref: experiments/cem_fixed_budget.base.yaml
+name: local_motion
+bfm:
+  ref: bfms/heft_pmg.yaml
+reference:
+  dataset_root: ./data
+  motion_id: walking
+output:
+  formats: [npz, any4hdmi]
+  trajectories: [execution, command]

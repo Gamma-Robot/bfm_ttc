@@ -1,0 +1,69 @@
+defaults:
+  - override hydra/job_logging: disabled
+  - override hydra/hydra_logging: disabled
+  - _self_
+
+mode: paper
+device: cpu
+parameters: parameters.yaml
+output_dir: output/${mode}
+budgets: [256, 512, 1024, 2048, 4096, 8192]
+fit:
+  device: cuda:0
+  output_dir: output/refit
+  max_nfev: 50000
+  ftol: 1.0e-11
+  xtol: 1.0e-11
+  gtol: 1.0e-11
+bounds:
+  J_inf: [1.0e-8, 1.0]
+  C_H: [1.0e-8, 20.0]
+  alpha_H: [1.0e-4, 2.0]
+  C_E: [1.0e-8, 0.1]
+  C_I: [1.0e-8, 2.0]
+  C_N: [1.0e-8, 2.0]
+  alpha_I: [0.005, 8.0]
+  alpha_N: [0.005, 8.0]
+  eta: [0.1, 160.0]
+  gamma: [0.9, 1.1]
+starts:
+  horizon:
+    - [0.02, 0.5, 0.10, 0.0001]
+    - [0.02, 2.0, 0.20, 0.0005]
+    - [0.035, 0.5, 0.10, 0.0001]
+    - [0.035, 2.0, 0.20, 0.0005]
+    - [0.04, 1.0, 0.30, 0.001]
+  solver:
+    - [0.03, 0.10, 0.10, 0.30]
+    - [0.03, 0.25, 0.30, 0.60]
+    - [0.10, 0.10, 0.60, 0.30]
+    - [0.10, 0.25, 0.30, 0.60]
+    - [0.25, 0.25, 0.60, 0.60]
+  transfer:
+    - [5.0, 0.98]
+    - [5.0, 1.00]
+    - [20.0, 0.98]
+    - [20.0, 1.00]
+    - [40.0, 0.98]
+    - [40.0, 1.00]
+    - [40.0, 1.02]
+    - [80.0, 0.98]
+    - [80.0, 1.00]
+    - [80.0, 1.02]
+    - [140.0, 1.00]
+    - [140.0, 1.02]
+  component:
+    floors: [1.0e-10, 0.5]
+    scales: [0.1, 0.1]
+    powers: [0.1, 0.3, 0.7, 1.2]
+    exponents: [0.5, 1.0, 2.0]
+    extra:
+      - [0.005539347, 0.088554799, 0.236026311, 0.342496933, 0.603618764]
+      - [1.0e-10, 0.09294439, 0.23684714, 0.311944, 0.589855]
+    extra_exponents: [0.5, 1.0, 2.0, 4.0]
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+  job:
+    chdir: false

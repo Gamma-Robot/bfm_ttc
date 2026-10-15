@@ -1,0 +1,133 @@
+family: sonic
+instance: sonic_low_latency_g1
+artifacts:
+  policy: "sonic-low-latency-g1-policy.batched"
+control_period: 0.02
+allow_cpu_ep_fallback: true
+motion_command_query_offsets: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+family_config:
+  root_body: pelvis
+  history_steps: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  default_joint_position:
+    [-0.312, -0.312, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+     0.669, 0.669, 0.2, 0.2, -0.363, -0.363, 0.2, -0.2, 0.0,
+     0.0, 0.0, 0.0, 0.6, 0.6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  action_scale:
+    [0.35066146635877904, 0.35066146635877904, 0.5475464651829304,
+     0.35066146635877904, 0.35066146635877904, 0.43857731389829635,
+     0.5475464651829304, 0.5475464651829304, 0.43857731389829635,
+     0.35066146635877904, 0.35066146635877904, 0.43857731389829635,
+     0.43857731389829635, 0.43857731389829635, 0.43857731389829635,
+     0.43857731389829635, 0.43857731389829635, 0.43857731389829635,
+     0.43857731389829635, 0.43857731389829635, 0.43857731389829635,
+     0.43857731389829635, 0.43857731389829635, 0.43857731389829635,
+     0.43857731389829635, 0.07450087032524835, 0.07450087032524835,
+     0.07450087032524835, 0.07450087032524835]
+  proportional_gain:
+    [99.098427782326, 99.098427782326, 40.17923847367,
+     99.098427782326, 99.098427782326, 28.501246197377824,
+     40.17923847367, 40.17923847367, 28.501246197377824,
+     99.098427782326, 99.098427782326, 14.250623098688912,
+     14.250623098688912, 28.501246197377824, 28.501246197377824,
+     14.250623098688912, 14.250623098688912, 28.501246197377824,
+     28.501246197377824, 14.250623098688912, 14.250623098688912,
+     14.250623098688912, 14.250623098688912, 14.250623098688912,
+     14.250623098688912, 16.77832748185191, 16.77832748185191,
+     16.77832748185191, 16.77832748185191]
+  derivative_gain:
+    [6.308801853676957, 6.308801853676957, 2.5578897651010553,
+     6.308801853676957, 6.308801853676957, 1.8144456866367064,
+     2.5578897651010553, 2.5578897651010553, 1.8144456866367064,
+     6.308801853676957, 6.308801853676957, 0.9072228433183532,
+     0.9072228433183532, 1.8144456866367064, 1.8144456866367064,
+     0.9072228433183532, 0.9072228433183532, 1.8144456866367064,
+     1.8144456866367064, 0.9072228433183532, 0.9072228433183532,
+     0.9072228433183532, 0.9072228433183532, 0.9072228433183532,
+     0.9072228433183532, 1.0681415022205298, 1.0681415022205298,
+     1.0681415022205298, 1.0681415022205298]
+policy_inputs:
+  - name: g1_input
+    dtype: float32
+    non_batch_shape: [640]
+  - name: proprioception
+    dtype: float32
+    non_batch_shape: [930]
+policy_outputs:
+  - name: action
+    dtype: float32
+    non_batch_shape: [29]
+policy_joint_names:
+  - left_hip_pitch_joint
+  - right_hip_pitch_joint
+  - waist_yaw_joint
+  - left_hip_roll_joint
+  - right_hip_roll_joint
+  - waist_roll_joint
+  - left_hip_yaw_joint
+  - right_hip_yaw_joint
+  - waist_pitch_joint
+  - left_knee_joint
+  - right_knee_joint
+  - left_shoulder_pitch_joint
+  - right_shoulder_pitch_joint
+  - left_ankle_pitch_joint
+  - right_ankle_pitch_joint
+  - left_shoulder_roll_joint
+  - right_shoulder_roll_joint
+  - left_ankle_roll_joint
+  - right_ankle_roll_joint
+  - left_shoulder_yaw_joint
+  - right_shoulder_yaw_joint
+  - left_elbow_joint
+  - right_elbow_joint
+  - left_wrist_roll_joint
+  - right_wrist_roll_joint
+  - left_wrist_pitch_joint
+  - right_wrist_pitch_joint
+  - left_wrist_yaw_joint
+  - right_wrist_yaw_joint
+command_joint_names:
+  - left_hip_pitch_joint
+  - left_hip_roll_joint
+  - left_hip_yaw_joint
+  - left_knee_joint
+  - left_ankle_pitch_joint
+  - left_ankle_roll_joint
+  - right_hip_pitch_joint
+  - right_hip_roll_joint
+  - right_hip_yaw_joint
+  - right_knee_joint
+  - right_ankle_pitch_joint
+  - right_ankle_roll_joint
+  - waist_yaw_joint
+  - waist_roll_joint
+  - waist_pitch_joint
+  - left_shoulder_pitch_joint
+  - left_shoulder_roll_joint
+  - left_shoulder_yaw_joint
+  - left_elbow_joint
+  - left_wrist_roll_joint
+  - left_wrist_pitch_joint
+  - left_wrist_yaw_joint
+  - right_shoulder_pitch_joint
+  - right_shoulder_roll_joint
+  - right_shoulder_yaw_joint
+  - right_elbow_joint
+  - right_wrist_roll_joint
+  - right_wrist_pitch_joint
+  - right_wrist_yaw_joint
+motion_command_body_names:
+  - pelvis
+  - left_hip_roll_link
+  - left_knee_link
+  - left_ankle_roll_link
+  - right_hip_roll_link
+  - right_knee_link
+  - right_ankle_roll_link
+  - torso_link
+  - left_shoulder_roll_link
+  - left_elbow_link
+  - left_wrist_yaw_link
+  - right_shoulder_roll_link
+  - right_elbow_link
+  - right_wrist_yaw_link

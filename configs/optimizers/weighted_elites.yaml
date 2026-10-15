@@ -1,0 +1,10 @@
+# num_candidates: 1 mean + 512 antithetic random candidates.
+algorithm: weighted_elites
+num_candidates: 513
+num_iterations: 2
+noise_scale: 0.4
+elite_fraction: 0.05
+temperature: 0.5
+noise_anneal: 0.8
+antithetic: true
+smoothing_passes: 1

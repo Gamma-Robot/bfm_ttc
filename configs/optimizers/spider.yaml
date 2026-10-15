@@ -1,0 +1,11 @@
+algorithm: spider
+num_candidates: 512
+num_iterations: 32
+noise_scale: 0.4
+first_knot_scale: 0.5
+last_knot_scale: 1.0
+final_noise_scale: 0.1
+elite_fraction: 0.1
+temperature: 0.1
+exploit_fraction: 0.01
+exploit_noise_scale: 0.01

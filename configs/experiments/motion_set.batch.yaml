@@ -1,0 +1,37 @@
+schema_version: 3
+name: motion_set
+experiment_refs:
+- experiments/sonic_motion.yaml
+motions:
+- id: motion-0019
+  reference:
+    dataset_root: ../../data
+    motion_id: 0019
+- id: motion-walk
+  reference:
+    dataset_root: ../../data
+    motion_id: walk
+    clip_duration_seconds: 10.0
+- id: motion-1187
+  reference:
+    dataset_root: ../../data
+    motion_id: '1187'
+- id: motion-01
+  reference:
+    dataset_root: ../../data
+    motion_id: '01'
+budgets:
+- id: n80-i4
+  num_candidates: 80
+  num_iterations: 4
+optimizer_variants:
+- id: cem_fixed_budget
+  ref: optimizers/cem.yaml
+  overrides:
+    num_elites: 9
+    sigma_start: 1.6
+    sigma_min: 0.075
+    explore_fraction: 0.0
+seeds:
+- 47
+rollout_batch_ceiling: 80

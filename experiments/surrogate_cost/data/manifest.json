@@ -1,0 +1,113 @@
+{
+  "description": "Aggregated SONIC/CEM compute-allocation measurements accompanying the paper.",
+  "configuration_columns": [
+    "I",
+    "N",
+    "H",
+    "E"
+  ],
+  "motion_set": "AMASS-S1: ten fixed G1 reference motions; same set for training and evaluation.",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "aggregation": "Per-motion mean executed running cost (no terminal penalty); equal mean across ten motions, then three seeds. cost_std is sample standard deviation of three seed means.",
+  "training": {
+    "horizon": 24,
+    "solver_CEM": 59,
+    "joint_train": 100
+  },
+  "evaluation": {
+    "joint_test": 50,
+    "random": 1200,
+    "proposed": 6
+  },
+  "known_overlap": {
+    "joint_train_random": [
+      11,
+      141,
+      13,
+      5
+    ],
+    "budget": 4096
+  },
+  "files": {
+    "horizon.csv": {
+      "sha256": "e48139b8f27d791c707e0bed32bd92fe81fc4edee9b36c89073f32d856472296",
+      "rows": 24,
+      "columns": [
+        "H",
+        "E",
+        "cost",
+        "cost_std"
+      ]
+    },
+    "joint_test.csv": {
+      "sha256": "e545053965530815354da326a1029358629504c897c617bbfd79f599f6c3f488",
+      "rows": 50,
+      "columns": [
+        "I",
+        "N",
+        "H",
+        "E",
+        "cost"
+      ]
+    },
+    "joint_train.csv": {
+      "sha256": "d3a19e637c93122181642580e18c87d668dafe8ec5794649fcc1fec0e8ff0f09",
+      "rows": 100,
+      "columns": [
+        "I",
+        "N",
+        "H",
+        "E",
+        "cost"
+      ]
+    },
+    "nominal.csv": {
+      "sha256": "16e0d43c8b6b6cfa5c8c7133737bb85bbeb21c4dd67ffc43e55a81e942fbdb23",
+      "rows": 1,
+      "columns": [
+        "cost"
+      ]
+    },
+    "proposed.csv": {
+      "sha256": "368c8ab96b555732e2f61013410c517645be68f8952984a5c51696b57ddea908",
+      "rows": 6,
+      "columns": [
+        "budget",
+        "I",
+        "N",
+        "H",
+        "E",
+        "cost"
+      ]
+    },
+    "random.csv": {
+      "sha256": "b0b7fcc93bcfb7309e9619fabc03fdc82f18713157aef06d035a4c4975faefe0",
+      "rows": 1200,
+      "columns": [
+        "budget",
+        "I",
+        "N",
+        "H",
+        "E",
+        "cost"
+      ]
+    },
+    "solver.csv": {
+      "sha256": "9ab7062ad1f0f930e61a898a30dac223317a5d695134337c027d6917a2d89667",
+      "rows": 293,
+      "columns": [
+        "algorithm",
+        "I",
+        "N",
+        "H",
+        "E",
+        "cost",
+        "cost_std"
+      ]
+    }
+  }
+}

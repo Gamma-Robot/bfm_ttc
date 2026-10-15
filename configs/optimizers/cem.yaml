@@ -1,0 +1,7 @@
+algorithm: cem
+num_candidates: 512
+num_iterations: 2
+num_elites: 64
+sigma_start: 0.5
+sigma_min: 0.05
+explore_fraction: 0.0

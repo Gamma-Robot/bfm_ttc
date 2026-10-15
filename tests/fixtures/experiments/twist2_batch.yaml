@@ -1,0 +1,5 @@
+# Cross-BFM batch contract tests use the same physics settings for every BFM.
+ref: ../tests/fixtures/experiments/twist2_jump_qualification.yaml
+name: twist2_batch
+robot:
+  physics_timestep: 0.005

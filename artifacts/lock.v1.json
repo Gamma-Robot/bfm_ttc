@@ -1,0 +1,69 @@
+{
+  "artifacts": {
+    "heft-pmg-policy": {
+      "bytes": 24257102,
+      "kind": "file",
+      "path": "artifacts/store/heft/pmg/policy.onnx",
+      "sha256": "ae22fd44c9d073e98a19b36e88d6a598119a2a900e9dba410ffea77a05ce784d",
+      "source_url": "https://github.com/Axellwppr/motion_tracking/tree/0d5ba31e33397f3543d350d98b637e26d92f470a/sim2real/config/g1/ckpts/G1_PMG"
+    },
+    "heft-pmg-policy.batched": {
+      "bytes": 24257252,
+      "kind": "file",
+      "path": "artifacts/store/heft/pmg/policy.batched.onnx",
+      "sha256": "8907b5e8ec83606435ca072a2d8c16179d141cfdeaf7ebf98460e86729a74053",
+      "source_id": "heft-pmg-policy",
+      "transform": "relax_leading",
+      "transform_version": 1
+    },
+    "sonic-release-g1-policy": {
+      "bytes": 57675628,
+      "kind": "file",
+      "path": "artifacts/store/sonic/release/g1/policy.onnx",
+      "sha256": "c0762c9504f4d03187f89417b143e42a1cf43a1b8c240f29e848384e60f86b1c",
+      "source_url": "https://huggingface.co/nvidia/GEAR-SONIC/tree/0af0cb7568257b04a8569b9c76f326e707b122fc"
+    },
+    "sonic-release-g1-policy.batched": {
+      "bytes": 57675190,
+      "kind": "file",
+      "path": "artifacts/store/sonic/release/g1/policy.batched.onnx",
+      "sha256": "7c0ef6272a290cec704c34b83287fb723b2728b44dfdc385564dc3256afb6fc6",
+      "source_id": "sonic-release-g1-policy",
+      "transform": "sonic_release_g1_batch",
+      "transform_version": 1
+    },
+    "sonic-low-latency-g1-policy": {
+      "bytes": 194852425,
+      "kind": "file",
+      "path": "artifacts/store/sonic/low_latency/g1/policy.onnx",
+      "sha256": "31b7ac6f381f9e9998d7ea71b8dcbecc0028e9fa02eeead5bb5b319b6315ecd1",
+      "source_url": "https://huggingface.co/nvidia/GEAR-SONIC/tree/183ed69145708878ee68cc8791848ee66f233d24/low_latency"
+    },
+    "sonic-low-latency-g1-policy.batched": {
+      "bytes": 194853126,
+      "kind": "file",
+      "path": "artifacts/store/sonic/low_latency/g1/policy.batched.onnx",
+      "sha256": "fb4d1161fb5c553a910f776ea672084eb6f72d892c3b709852ff96cc68c675da",
+      "source_id": "sonic-low-latency-g1-policy",
+      "transform": "sonic_low_latency_g1_batch",
+      "transform_version": 1
+    },
+    "twist2-1017-20k-policy": {
+      "bytes": 3184908,
+      "kind": "file",
+      "path": "artifacts/store/twist2/1017-20k/policy.onnx",
+      "sha256": "2d1fb3a31e4e967f70ecfefc3ad1e7b2ac491677068b89f60b565a94e7735061",
+      "source_url": "https://github.com/amazon-far/TWIST2/blob/d5c7108e9ef82d1b8770e5b692f27a1294f3aa8a/assets/ckpts/twist2_1017_20k.onnx",
+      "uri": "https://raw.githubusercontent.com/amazon-far/TWIST2/d5c7108e9ef82d1b8770e5b692f27a1294f3aa8a/assets/ckpts/twist2_1017_20k.onnx"
+    },
+    "g1-paper-model": {
+      "kind": "tree",
+      "tree_root": "artifacts/store/robots/g1-paper-model",
+      "tree_files": 37,
+      "tree_bytes": 21499236,
+      "tree_sha256": "101ee02653225b276abe709efe74a2bdae0436a438dd7a8a5b86719e70c08c11",
+      "source_url": "https://github.com/Axellwppr/motion_tracking/tree/0d5ba31e33397f3543d350d98b637e26d92f470a/sim2real/config/g1/assets"
+    }
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,17 @@
+schema_version: 3
+name: candidate_count_profile
+experiment_refs:
+  - ../tests/fixtures/experiments/twist2_batch.yaml
+  - ../tests/fixtures/experiments/heft_jump_qualification.yaml
+  - ../tests/fixtures/experiments/sonic_jump_qualification.yaml
+clip_duration_seconds: 0.4
+budgets:
+  - {id: n5-i1, num_candidates: 5, num_iterations: 1}
+  - {id: n65-i1, num_candidates: 65, num_iterations: 1}
+  - {id: n257-i1, num_candidates: 257, num_iterations: 1}
+optimizer_variants:
+  - id: weighted_elites_low_noise
+    ref: optimizers/weighted_elites.yaml
+    overrides: {noise_scale: 0.2}
+seeds: [47]
+rollout_batch_ceiling: 257

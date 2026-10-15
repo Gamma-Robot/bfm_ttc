@@ -1,0 +1,29 @@
+[project]
+name = "bfm-ttc-workspace"
+version = "0.1.0"
+description = "Test-time scaling for pretrained G1 whole-body trackers in the MJWarp world"
+requires-python = ">=3.10"
+dependencies = ["sampling-optimizers", "bfm-adapters", "bfm-ttc"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["src/sampling_optimizers", "src/bfm_adapters", "src/command_optimization"]
+exclude = ["experiments/surrogate_cost"]
+
+[tool.uv.sources]
+sampling-optimizers = { workspace = true }
+bfm-adapters = { workspace = true }
+bfm-ttc = { workspace = true }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+junit_family = "xunit1"
+markers = [
+    "gpu: requires a CUDA device",
+    "conformance: tolerance-gated qualification tests",
+]

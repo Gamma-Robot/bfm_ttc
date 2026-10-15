@@ -1,0 +1,25 @@
+body_names:
+  - pelvis
+  - left_hip_roll_link
+  - left_knee_link
+  - left_ankle_roll_link
+  - right_hip_roll_link
+  - right_knee_link
+  - right_ankle_roll_link
+  - torso_link
+  - left_shoulder_roll_link
+  - left_elbow_link
+  - left_wrist_yaw_link
+  - right_shoulder_roll_link
+  - right_elbow_link
+  - right_wrist_yaw_link
+tracking_joint_position_weight: 1.0
+tracking_joint_velocity_weight: 0.0
+tracking_body_position_weight: 1.0
+tracking_body_orientation_weight: 0.5
+deformation_joint_position_weight: 0.1
+deformation_body_position_weight: 0.1
+deformation_body_orientation_weight: 0.05
+joint_speed_weight: 0.01
+terminal_joint_position_weight: 5.0
+terminal_body_position_weight: 5.0

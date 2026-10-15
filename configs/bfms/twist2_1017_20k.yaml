@@ -1,0 +1,84 @@
+# Policy and runtime semantics follow amazon-far/TWIST2 at
+# d5c7108e9ef82d1b8770e5b692f27a1294f3aa8a.
+family: twist2
+instance: twist2_1017_20k
+artifacts:
+  policy: "twist2-1017-20k-policy"
+control_period: 0.02
+allow_cpu_ep_fallback: true
+motion_command_query_offsets: [0, 1]
+family_config:
+  root_body: pelvis
+  history_length: 10
+  ankle_joint_names:
+    [left_ankle_pitch_joint, left_ankle_roll_joint,
+     right_ankle_pitch_joint, right_ankle_roll_joint]
+  angular_velocity_scale: 0.25
+  joint_position_scale: 1.0
+  joint_velocity_scale: 0.05
+  action_clip: 10.0
+  default_joint_position:
+    [-0.2, 0.0, 0.0, 0.4, -0.2, 0.0,
+     -0.2, 0.0, 0.0, 0.4, -0.2, 0.0,
+     0.0, 0.0, 0.0,
+     0.0, 0.4, 0.0, 1.2, 0.0, 0.0, 0.0,
+     0.0, -0.4, 0.0, 1.2, 0.0, 0.0, 0.0]
+  action_scale:
+    [0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
+     0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
+     0.5, 0.5, 0.5,
+     0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
+     0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+  proportional_gain:
+    [100.0, 100.0, 100.0, 150.0, 40.0, 40.0,
+     100.0, 100.0, 100.0, 150.0, 40.0, 40.0,
+     150.0, 150.0, 150.0,
+     40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0,
+     40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0]
+  derivative_gain:
+    [2.0, 2.0, 2.0, 4.0, 2.0, 2.0,
+     2.0, 2.0, 2.0, 4.0, 2.0, 2.0,
+     4.0, 4.0, 4.0,
+     5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0,
+     5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0]
+policy_inputs:
+  - name: input
+    dtype: float32
+    non_batch_shape: [1432]
+policy_outputs:
+  - name: output
+    dtype: float32
+    non_batch_shape: [29]
+policy_joint_names: &joints
+  - left_hip_pitch_joint
+  - left_hip_roll_joint
+  - left_hip_yaw_joint
+  - left_knee_joint
+  - left_ankle_pitch_joint
+  - left_ankle_roll_joint
+  - right_hip_pitch_joint
+  - right_hip_roll_joint
+  - right_hip_yaw_joint
+  - right_knee_joint
+  - right_ankle_pitch_joint
+  - right_ankle_roll_joint
+  - waist_yaw_joint
+  - waist_roll_joint
+  - waist_pitch_joint
+  - left_shoulder_pitch_joint
+  - left_shoulder_roll_joint
+  - left_shoulder_yaw_joint
+  - left_elbow_joint
+  - left_wrist_roll_joint
+  - left_wrist_pitch_joint
+  - left_wrist_yaw_joint
+  - right_shoulder_pitch_joint
+  - right_shoulder_roll_joint
+  - right_shoulder_yaw_joint
+  - right_elbow_joint
+  - right_wrist_roll_joint
+  - right_wrist_pitch_joint
+  - right_wrist_yaw_joint
+command_joint_names: *joints
+motion_command_body_names:
+  - pelvis

@@ -1,0 +1,10 @@
+ref: ../tests/fixtures/experiments/cross_bfm_low_budget.base.yaml
+
+name: twist2_jump_qualification
+bfm:
+  ref: bfms/twist2_1017_20k.yaml
+robot:
+  physics_timestep: 0.001
+reference:
+  motion_id: "0019"
+  clip_duration_seconds: 0.4

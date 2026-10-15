@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+.pytest_cache/
+/AGENTS.md
+outputs/
+artifacts/*
+!artifacts/lock.v1.json
+/docs/superpowers/
+/dist/

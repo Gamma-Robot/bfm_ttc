@@ -1,0 +1,8 @@
+algorithm: cbo
+num_candidates: 512
+num_iterations: 2
+initial_noise_level: 0.5
+temperature: 0.1
+consensus_weight: 1.0
+noise_weight: 0.3
+step_size: 0.1

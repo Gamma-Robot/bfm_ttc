@@ -1,0 +1,47 @@
+# Fixed-budget CEM recipe: 80 candidates x 4 iterations per planning update.
+# Linear interpolation, zero latent tail, and fresh optimizer state per update
+# are fixed runtime semantics. Physics warm-start state is preserved separately.
+schema_version: 3
+
+robot:
+  ref: robots/g1_mjwarp.yaml
+
+optimizer:
+  ref: optimizers/cem.yaml
+  num_candidates: 80
+  num_iterations: 4
+  num_elites: 9
+  sigma_start: 1.6
+  sigma_min: 0.075
+  explore_fraction: 0.0
+
+motion_tracking:
+  ref: motion_tracking/default.yaml
+
+planning:
+  horizon_steps: 40
+  replanning_interval_steps: 20
+  num_knots: 5
+  max_worlds: 80
+  failure_penalty: 1000000000000.0
+  seed: 47
+  evaluate_proposal: false
+  root_body_name: pelvis
+  scales:
+    root_xy_m: 0.055
+    root_z_m: 0.0275
+    root_rotation_rad: 0.0825
+    joint_position_rad: 0.1375
+
+visualization:
+  enabled: false
+  fps: 25
+  width: 640
+  height: 360
+  distance: 4.0
+  azimuth: 135.0
+  elevation: -18.0
+  reference_lookat_height: 0.9
+  camera_mode: follow
+  show_root_error: true
+  show_time: true

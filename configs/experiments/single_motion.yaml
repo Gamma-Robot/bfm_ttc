@@ -1,0 +1,10 @@
+ref: experiments/cem_fixed_budget.base.yaml
+name: single_motion
+bfm:
+  ref: bfms/heft_pmg.yaml
+reference:
+  dataset_root: ../../data
+  motion_id: "0019"
+output:
+  formats: [npz, any4hdmi]
+  trajectories: [execution, command]

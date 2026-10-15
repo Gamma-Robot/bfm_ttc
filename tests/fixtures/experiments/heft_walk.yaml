@@ -1,0 +1,4 @@
+ref: ../tests/fixtures/experiments/heft_jump_qualification.yaml
+name: heft_walk
+reference:
+  motion_id: "walk"

@@ -1,0 +1,51 @@
+schema_version: 3
+
+name: sonic_smoke
+
+bfm:
+  ref: bfms/sonic_release_g1.yaml
+
+robot:
+  ref: robots/g1_mjwarp.yaml
+
+optimizer:
+  ref: optimizers/weighted_elites.yaml
+  num_candidates: 5
+  num_iterations: 1
+  noise_scale: 0.2
+
+motion_tracking:
+  ref: motion_tracking/default.yaml
+
+reference:
+  dataset_root: ../../../data
+  motion_id: "0019"
+  clip_duration_seconds: 0.08
+
+planning:
+  horizon_steps: 4
+  replanning_interval_steps: 2
+  num_knots: 3
+  max_worlds: 5
+  failure_penalty: 1000000000000.0
+  seed: 47
+  evaluate_proposal: true
+  root_body_name: pelvis
+  scales:
+    root_xy_m: 0.02
+    root_z_m: 0.01
+    root_rotation_rad: 0.03
+    joint_position_rad: 0.05
+
+visualization:
+  enabled: false
+  fps: 25
+  width: 640
+  height: 360
+  distance: 4.0
+  azimuth: 135.0
+  elevation: -18.0
+  reference_lookat_height: 0.9
+  camera_mode: follow
+  show_root_error: true
+  show_time: true

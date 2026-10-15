@@ -1,0 +1,10 @@
+ref: experiments/cem_fixed_budget.base.yaml
+name: sonic_motion
+bfm:
+  ref: bfms/sonic_release_g1.yaml
+reference:
+  dataset_root: ../../data
+  motion_id: 0019
+output:
+  formats: [npz, any4hdmi]
+  trajectories: [execution, command]

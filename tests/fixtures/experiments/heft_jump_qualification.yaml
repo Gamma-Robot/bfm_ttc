@@ -1,0 +1,8 @@
+ref: ../tests/fixtures/experiments/cross_bfm_low_budget.base.yaml
+
+name: heft_jump_qualification
+bfm:
+  ref: bfms/heft_pmg.yaml
+reference:
+  motion_id: "0019"
+  clip_duration_seconds: 0.4
