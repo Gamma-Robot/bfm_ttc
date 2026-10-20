@@ -122,7 +122,7 @@ If you run into a problem, please open an
 [issue](https://github.com/Gamma-Robot/bfm_ttc/issues). For collaboration,
 feedback, or other questions, contact:
 
-- Junsong Wu: [jason-w@sjtu.edu.cn](mailto:jason-w@sjtu.edu.cn)
+- Junsong Wu: [jason-w@sjtu.edu.cn](mailto:jason-w@sjtu.edu.cn) or via Weixin (`Wujunsong0818`)
 - Weiji Xie: [xieweiji249@sjtu.edu.cn](mailto:xieweiji249@sjtu.edu.cn) or via Weixin (`shisoul`)
 - Chenjia Bai (Corresponding Author): [baicj@chinatelecom.cn](mailto:baicj@chinatelecom.cn)
 
